@@ -1,5 +1,10 @@
 @extends('layouts.app')
+@section('style')
 
+<link rel="stylesheet" type="text/css" src="{{ asset('css/jquery.datetimepicker.css') }}"/ >
+<link rel="stylesheet" media="print" src="{{ asset('css/jquery.datetimepicker.min.css') }}"/>
+
+@endsection
 @section('content')
 <div class="container" >
     <div class="col-md-12">
