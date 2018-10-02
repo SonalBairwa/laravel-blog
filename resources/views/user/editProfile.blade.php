@@ -30,12 +30,12 @@
                         <div class="col-md-12" style="margin-bottom: 2%">
                             <div class="col-md-6">
                                 <label for="usr">Name:</label>
-                                <input type="text" name="name" class="form-control" readonly>
+                                <input type="text" name="name" value="{{$user->name}}" class="form-control" readonly>
                             </div>
 
                             <div class="col-md-6">
                                 <label for="usr">Email:</label>
-                                <input type="email" name="email" class="form-control" readonly>
+                                <input type="email" name="email" value="{{$user->email}}" class="form-control" readonly>
                             </div>
                         </div>
 

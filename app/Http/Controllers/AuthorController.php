@@ -37,9 +37,9 @@ class AuthorController extends Controller
     	$contents=Content::all();
     	return view('author.addContent',compact('data','contents','user_id'));
     }
-    public function editContent()
+    public function editContent($id)
     {
-    	return 2;
+    	return $id;
     }
     public function storeContent(Request $request)
     {

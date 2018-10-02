@@ -28,12 +28,12 @@
       <button  class="btn" type="submit"   style="background-color:#c3a694;margin-left: 100rem;width: 15rem" >Add New Content</button>
 
     </form>
-     <form action="{{ url('content/edit-content') }}" id="upload" method="get"  enctype="multipart/form-data">
+   <!--   <form action="{{ url('content/edit-content') }}" id="upload" method="get"  enctype="multipart/form-data">
         {{ csrf_field() }}
       <input type="hidden" name="package" value="bronze">  
       <button  class="btn" type="submit"   style="background-color:#c3a694;margin-left: 100rem;width: 15rem" >Edit Content</button>
 
-    </form>
+    </form> -->
     </div>
                
             </div>
@@ -49,7 +49,16 @@
                         </div>
                         <div class="col-md-8" style="margin-top: -3%">
                             <div class="card-body">
-                                <h3 class="card-title">{{$dat->title}}            <h5>created at: {{$dat->created_at->format('d/m/Y')}}</h5></h3>
+                                <div class="col-md-12">
+                                    <div class="col-md-8">
+                                        <a href="{{ url('editContent',array($dat->id)) }}"  class="btn" style="color: black"><h4 class="card-title">{{$dat->title}}
+                                                </h4></a>
+                                        
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h5>created at: {{$dat->created_at->format('d/m/Y')}}</h5>
+                                    </div>
+                                </div>
                                 <p class="card-text">{{$dat->abstract}}</p>
                             </div>
                             <ul class="list-group list-group-flush col-md-12">
