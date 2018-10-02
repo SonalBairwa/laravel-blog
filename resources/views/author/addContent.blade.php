@@ -1,4 +1,5 @@
 @extends('layouts.app')
+
 @section('style')
 
     <link rel="stylesheet" type="text/css" src="{{ asset('css/jquery.datetimepicker.css') }}"/ >
@@ -19,18 +20,24 @@
             @endif
 
             <div class="col-md-12">
+                    <form action="{{ url('content/edit-content') }}" id="upload" method="get"  enctype="multipart/form-data">
+        {{ csrf_field() }}
+      <input type="hidden" name="package" value="bronze">  
+      <button  class="btn" type="submit"   style="background-color:#c3a694;width: 15rem;margin-left: 90rem;margin-top: 10px" >Add Category</button>
+
+    </form>
                 <form action="{{ url('content/storeContent') }}" id="upload" method="post"
                       enctype="multipart/form-data">
                     {{ csrf_field() }}
-                        <div class="col-md-12" style="text-align: center; margin-top: -3%">
-                            <h2>Adding New Post</h2>
+                        <div class="col-md-12" style="text-align: center; margin-top: -3%;">
+                            <h2 >Adding New Post</h2>
                         </div>
                     <div class="col-md-12">
                         <div class="col-md-1" style="margin-right: -40px">
                             <label for="usr"><h4>Title:</h4></label>
                         </div>
 
-                        <div class="col-md-5">
+                        <div class="col-md-3">
                             <div class="form-group">
                                 <input type="text" name="title" class="form-control" required>
                             </div>
@@ -39,7 +46,7 @@
                         <div class="col-md-1">
                             <label for="usr"><h4>Category:</h4></label>
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-md-3">
                             <select id="category" class=" form-control " name="category">
                                 @foreach($data as $category)
                                     <option value="" selected disabled hidden>Category</option>
@@ -47,6 +54,7 @@
                                 @endforeach
                             </select>
                         </div>
+                        
                     </div>
 
                     <div class="col-md-12">
@@ -74,14 +82,15 @@
 
                     <div class="form-group">
                         <div class="PostButton" style="text-align: center">
-                            <button class="btn btn-success upload-image"
-                                    style="text-align: center!important;   margin-bottom: 1%" type="submit">
+                            <button class="btn "
+                                    style="background-color:#c3a694;text-align: center!important;   margin-bottom: 1%" type="submit">
                                 Submit Post
                             </button>
                         </div>
                         <br>
                     </div>
                 </form>
+
             </div>
         </div>
     </div>

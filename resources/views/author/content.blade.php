@@ -18,7 +18,25 @@
                 </div>
             @endif
 
+            <div class="Postbutton" style="margin-bottom: 5%; text-align: center">
+               <!--  <button  type="button" href="{{ url('content/add-content') }}" class="btn btn-default">Add more posts</button> -->
+                  <!--  <a href="{{ url('content/add-content') }}" class="btn" style="color: black"><h3>Add New Content</h3></a> -->
+                  <div class="">
+                    <form action="{{ url('content/add-content') }}" id="upload" method="get"  enctype="multipart/form-data">
+        {{ csrf_field() }}
+      <input type="hidden" name="package" value="bronze">  
+      <button  class="btn" type="submit"   style="background-color:#c3a694;margin-left: 100rem;width: 15rem" >Add New Content</button>
 
+    </form>
+     <form action="{{ url('content/edit-content') }}" id="upload" method="get"  enctype="multipart/form-data">
+        {{ csrf_field() }}
+      <input type="hidden" name="package" value="bronze">  
+      <button  class="btn" type="submit"   style="background-color:#c3a694;margin-left: 100rem;width: 15rem" >Edit Content</button>
+
+    </form>
+    </div>
+               
+            </div>
             @foreach($contents as $dat)
                 @if($dat)
                     <div class="col-md-12" style="margin-bottom: 50px">
@@ -31,7 +49,7 @@
                         </div>
                         <div class="col-md-8" style="margin-top: -3%">
                             <div class="card-body">
-                                <h3 class="card-title">{{$dat->title}}</h3>
+                                <h3 class="card-title">{{$dat->title}}            <h5>created at: {{$dat->created_at->format('d/m/Y')}}</h5></h3>
                                 <p class="card-text">{{$dat->abstract}}</p>
                             </div>
                             <ul class="list-group list-group-flush col-md-12">
@@ -41,11 +59,7 @@
                     </div>
                 @endif
             @endforeach
-            <div class="Postbutton" style="margin-bottom: 5%; text-align: center">
-               <!--  <button  type="button" href="{{ url('content/add-content') }}" class="btn btn-default">Add more posts</button> -->
-                   <a href="{{ url('content/add-content') }}" class="btn" style="color: black"><h3>Add New Content</h3></a>
-               
-            </div>
+            
         </div>
     </div>
     </div>
