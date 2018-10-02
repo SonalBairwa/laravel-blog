@@ -4,8 +4,6 @@
         <form action="{{ url('content/storeContent') }}" id="upload" method="post"
               enctype="multipart/form-data">
             {{ csrf_field() }}
-
-
             <div class="form-group ">
                 <label for="usr">Upload Image</label>
                 <input type="file" name="image" class="form-control " required>

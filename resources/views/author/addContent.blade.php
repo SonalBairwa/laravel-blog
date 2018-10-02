@@ -31,7 +31,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="card-body">
-                                <h3  class="card-title">{{$dat->title}}</h3>
+                                <h3 class="card-title">{{$dat->title}}</h3>
                                 <p class="card-text">{{$dat->abstract}}</p>
                             </div>
                             <ul class="list-group list-group-flush col-md-6">
@@ -41,16 +41,13 @@
                     </div>
                 @endif
             @endforeach
+            <div class="Postbutton" style="margin-bottom: 5%; text-align: center">
                 <button type="button">Add more posts</button>
-
-
-
+            </div>
         </div>
-
     </div>
-
     </div>
-    @endsection
+@endsection
 
 
 
