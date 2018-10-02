@@ -41,7 +41,7 @@
                     </div>
                 @endif
             @endforeach
-                <button type="button">Click Me!</button>
+                <button type="button">Add more posts</button>
 
 
 
