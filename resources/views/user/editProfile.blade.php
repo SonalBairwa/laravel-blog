@@ -21,7 +21,6 @@
                 </div>
             @endif
 
-
             <div class="col-md-12">
                 <form action="{{ url('content/storeContent') }}" id="upload" method="post"
                       enctype="multipart/form-data">
