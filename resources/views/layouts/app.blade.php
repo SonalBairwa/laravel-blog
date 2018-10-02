@@ -68,13 +68,14 @@
                             <a href="{{ url('login') }}">Edit2</a>
                             <a href="{{ url('register') }}">profile2</a>
                             @endif
-                            <div class="dropdown btn " style="margin-top: 10px; ">
+                            <a href="{{ url('content/content') }}" class="btn " style="color: black">Content</a>
+                            <!-- <div class="dropdown btn " style="margin-top: 10px; ">
                               <a  class=" dropdown dropdown-toggle " data-toggle="dropdown" role="button" aria-expanded="false" style="color:black;">Content </a>
                                 <ul class="dropdown-menu" role="menu" style="text-align:center;color: black">
                                   <li><a href="{{ url('content/add-content') }}" class="btn " style="color: black">Add Content</a></li>
                                   <li><a href="{{ url('content/edit-content') }}" class="btn " style="color: black">Edit Content</a></li>
                                 </ul>
-                             </div>
+                             </div> -->
                               <div class="dropdown btn " style="margin-top: 10px; ">
                               <a  class=" dropdown dropdown-toggle " data-toggle="dropdown" role="button" aria-expanded="false" style="color:black;">Category</a>
                                 <ul class="dropdown-menu" role="menu" style="text-align:center;color: black">

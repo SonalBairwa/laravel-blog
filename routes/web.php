@@ -25,6 +25,7 @@ Route::get('author/home', 'AuthorController@index');
 Route::get('user/home', 'UserController@index');
 Route::get('/editProfile', 'UserController@editProfile');
 //Route::post('/saveEditProfile', 'UserController@saveEditProfile');
+Route::get('content/content', 'AuthorController@Content');
 Route::get('content/add-content', 'AuthorController@addContent');
 Route::get('content/edit-content', 'AuthorController@editContent');
 Route::post('content/storeContent', 'AuthorController@storeContent');

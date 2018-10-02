@@ -24,7 +24,13 @@ class AuthorController extends Controller
     {
     	 return view('author.home');
     }
-    public function addContent()
+    public function Content()
+    {
+        $user_id=Auth::user()->id;
+        $data=Category::all();
+        $contents=Content::all();
+        return view('author.content',compact('data','contents','user_id'));
+    }public function addContent()
     {
     	$user_id=Auth::user()->id;
     	$data=Category::all();
