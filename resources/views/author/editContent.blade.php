@@ -20,17 +20,12 @@
             @endif
 
             <div class="col-md-12">
-                    <form action="{{ url('content/edit-content') }}" id="upload" method="get"  enctype="multipart/form-data">
-        {{ csrf_field() }}
-      <input type="hidden" name="package" value="bronze">  
-      <button  class="btn" type="submit"   style="background-color:#c3a694;width: 15rem;margin-left: 90rem;margin-top: 10px" >Add Category</button>
-
-    </form>
+                   
                 <form action="{{ url('content/storeContent') }}" id="upload" method="post"
                       enctype="multipart/form-data">
                     {{ csrf_field() }}
                         <div class="col-md-12" style="text-align: center; margin-top: -3%;">
-                            <h2 >Adding New Post</h2>
+                            <h2 >Updating Post</h2>
                         </div>
                     <div class="col-md-12">
                         <div class="col-md-1" style="margin-right: -40px">
@@ -39,52 +34,52 @@
 
                         <div class="col-md-3">
                             <div class="form-group">
-                                <input type="text" name="title" class="form-control" required>
+                                <input type="text" name="title" value="{{$title}}" class="form-control" required>
                             </div>
                         </div>
 
                         <div class="col-md-1">
                             <label for="usr"><h4>Category:</h4></label>
                         </div>
-                        <div class="col-md-3">
-                            <select id="category" class=" form-control " name="category" required>
+                      <div class="col-md-3">
+                            <select id="category" class=" form-control " name="category">
                                 @foreach($data as $category)
-                                    <option value="" selected disabled hidden>Category</option>
+                                    <option value="$cat->id" selected disabled hidden>{{$cat->name}}</option>
                                     <option value="{{$category->id}}">{{$category->name}}</option>
                                 @endforeach
                             </select>
                         </div>
-                        
                     </div>
 
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="comment"><h4>Abstract:</h4></label>
-                            <textarea class="form-control" name="abstract" rows="5" required></textarea>
+                            <input class="form-control" value="{{$abstract}}" name="abstract" rows="5">
+
                         </div>
                     </div>
 
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="comment"><h4>Content:</h4></label>
-                            <textarea class="form-control" name="content_body" rows="5" required></textarea>
+                            <input class="form-control" value="{{$text}}" name="content_body" rows="5">
                         </div>
                     </div>
 
-                    <div class="col-md-2" style="margin-right: -2%">
+                    <!-- <div class="col-md-2" style="margin-right: -2%">
                         <label for="usr"><h4>Upload Image</h4></label>
                     </div>
                     <div class="col-md-10">
                         <div class="form-group ">
                             <input type="file" name="image" class="form-control " required>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="form-group">
                         <div class="PostButton" style="text-align: center">
                             <button class="btn "
                                     style="background-color:#c3a694;text-align: center!important;   margin-bottom: 1%" type="submit">
-                                Submit Post
+                                Update Post
                             </button>
                         </div>
                         <br>

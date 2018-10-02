@@ -37,9 +37,18 @@ class AuthorController extends Controller
     	$contents=Content::all();
     	return view('author.addContent',compact('data','contents','user_id'));
     }
-    public function editContent()
+    public function editContent($id)
     {
-    	return $id;
+
+        $content=Content::find($id);
+        //return $content;
+        $title=$content->title;
+        $abstract=$content->abstract;
+        $text=$content->text;
+        $data=Category::all();
+        $cat=Category::find($content->category_id);
+
+    	return view('author.editContent',compact('title','abstract','text','cat','data'));
     }
     public function storeContent(Request $request)
     {
@@ -51,7 +60,7 @@ class AuthorController extends Controller
     	$category=$request->category;
     	$carbon = Carbon::now();
         $user_id = Auth::user()->id;
-       
+        
         
         $filename=basename($_FILES["image"]["name"]);
         $imageFileType = strtolower(pathinfo($filename,PATHINFO_EXTENSION));
@@ -73,7 +82,7 @@ class AuthorController extends Controller
             // }
             //return $myfile;
           //$content_path=$content->move(public_path('fileUploads/'.$user_id.'/content'),'con.txt');
-          $data=Content::firstOrCreate(['image'=>$image_path,'title'=>$title,'abstract'=>$abstract,'text'=>$content_body,'category_id'=>$category]);
+          $data=Content::firstOrCreate(['user_id'=>$user_id,'image'=>$image_path,'title'=>$title,'abstract'=>$abstract,'text'=>$content_body,'category_id'=>$category]);
            return redirect('/content/content')->with('status', 'Profile updated!');
           //$path="http://localhost/".substr($path,14);
           //return $path; 

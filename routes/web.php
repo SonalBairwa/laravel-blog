@@ -17,15 +17,17 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 Route::get('admin/superadmin', 'SuperAdminController@index');
 Route::POST('/admin/assignRole', 'SuperAdminController@assignRole')->name('asignRole');
 Route::get('admin/home', 'AdminController@index');
 Route::get('author/home', 'AuthorController@index');
 Route::get('user/home', 'UserController@index');
 Route::get('/editProfile', 'UserController@editProfile');
+Route::get('/home', 'UserController@allPosts');
 //Route::post('/saveEditProfile', 'UserController@saveEditProfile');
 Route::get('content/content', 'AuthorController@Content');
 Route::get('content/add-content', 'AuthorController@addContent');
 Route::get('editContent/{id}', 'AuthorController@editContent')->name('editContent');
 Route::post('content/storeContent', 'AuthorController@storeContent');
+Route::post('content/storeProfile', 'UserController@saveEditProfile');

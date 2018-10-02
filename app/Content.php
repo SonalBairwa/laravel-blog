@@ -8,7 +8,7 @@ class Content extends Model
 {
    
    protected $fillable = [
-        'title', 'abstract', 'text','image','category_id'
+        'user_id','title', 'abstract', 'text','image','category_id'
     ];
 
    public function category()

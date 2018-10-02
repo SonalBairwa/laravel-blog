@@ -65,8 +65,8 @@
                     @else
                         @if(Auth::user()->role[0]->name=='admin' OR Auth::user()->role[0]->name=='author')
                           @if(Auth::user()->role[0]->name=='admin')
-                            <a href="{{ url('login') }}">Edit2</a>
-                            <a href="{{ url('register') }}">profile2</a>
+                             <a href="" class="btn " style="color: black">Admin</a>
+                             <a href="" class="btn " style="color: black">Admin</a>
                             @endif
                             <a href="{{ url('content/content') }}" class="btn " style="color: black">Content</a>
                             <!-- <div class="dropdown btn " style="margin-top: 10px; ">
@@ -76,7 +76,7 @@
                                   <li><a href="{{ url('content/edit-content') }}" class="btn " style="color: black">Edit Content</a></li>
                                 </ul>
                              </div> -->
-                              <div class="dropdown btn " style="margin-top: 10px; ">
+                             <!--  <div class="dropdown btn " style="margin-top: 10px; ">
                               <a  class=" dropdown dropdown-toggle " data-toggle="dropdown" role="button" aria-expanded="false" style="color:black;">Category</a>
                                 <ul class="dropdown-menu" role="menu" style="text-align:center;color: black">
                                   <li><a href="{{ url('/create-device') }}" class="btn " style="color: black">Edit Category</a></li>
@@ -89,7 +89,7 @@
                                   <li><a href="{{ url('/create-device') }}" class="btn " style="color: black">Edit Tags</a></li>
                                   <li><a href="{{ url('/device-details') }}" class="btn " style="color: black">Register Tags</a></li>
                                 </ul>
-                             </div>
+                             </div> -->
                         
                         @endif
                        

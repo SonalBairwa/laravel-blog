@@ -22,7 +22,7 @@
             @endif
 
             <div class="col-md-12">
-                <form action="{{ url('content/storeContent') }}" id="upload" method="post"
+                <form action="{{ url('content/storeProfile') }}" id="upload" method="post"
                       enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="form-group">
@@ -44,29 +44,29 @@
                                 <input id="date_of_birth" name="date_of_birth" type="date">
                             </div>
                             <div class="col-md-3">
-                                <label for="usr">Moile No:</label>
+                                <label for="usr">Moible No:</label>
                                 <input type="text" name="mobile" class="form-control">
                             </div>
-                            <div class="col-md-6">
+                            <!-- <div class="col-md-6">
                                 <label>Current Password</label>
                                 <div class="form-group ">
-                                    <input type="password" value="" class="form-control" placeholder="Current Password">
+                                    <input type="password" name="current_password" value="" class="form-control" placeholder="Current Password">
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
 
                         <div class="col-md-12" style="margin-bottom: 2%">
                             <div class="col-md-6">
                                 <label>New Password</label>
                                 <div class="form-group ">
-                                    <input type="password" value="" class="form-control"
+                                    <input type="password" name="password" value="" class="form-control"
                                            placeholder="New Password">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <label>Confirm Password</label>
                                 <div class="form-group ">
-                                    <input type="password" value="" class="form-control"
+                                    <input type="password" name="confirm_password" value="" class="form-control"
                                            placeholder="Confirm Password">
                                 </div>
                             </div>

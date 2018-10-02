@@ -21,34 +21,20 @@
             <div class="Postbutton" style="margin-bottom: 5%; text-align: center">
             <!--  <button  type="button" href="{{ url('content/add-content') }}" class="btn btn-default">Add more posts</button> -->
             <!--  <a href="{{ url('content/add-content') }}" class="btn" style="color: black"><h3>Add New Content</h3></a> -->
-                <div class="">
-                    <form action="{{ url('content/add-content') }}" id="upload" method="get"
-                          enctype="multipart/form-data">
-                        {{ csrf_field() }}
-                        <input type="hidden" name="package" value="bronze">
-                        <button class="btn" type="submit"
-                                style="background-color:#c3a694;margin-left: 100rem;width: 15rem">Add New Content
-                        </button>
-
-                    </form>
-                   <!--  <form action="{{ url('content/edit-content') }}" id="upload" method="get"
-                          enctype="multipart/form-data">
-                        {{ csrf_field() }}
-                        <input type="hidden" name="package" value="bronze">
-                        <button class="btn" type="submit"
-                                style="background-color:#c3a694;margin-left: 100rem;width: 15rem">Edit Content
-                        </button>
-
-                    </form> -->
-                </div>
+            
 
             </div>
-            @foreach($contents as $dat)
+        
+
+            @foreach($posts as $val)
+                @foreach($val as $dat)
                 @if($dat)
+              
+                
                     <div class="col-md-12" style="margin-bottom: 50px">
                         <div class="col-md-4">
                             <div class="card" width="300">
-                                <img class="card-img-top" src="{{ asset('fileUploads/'.$user_id.'/'.$dat->image) }}"
+                                <img class="card-img-top" src="{{ asset('fileUploads/'.$dat->user_id.'/'.$dat->image) }}"
                                      alt="Card image cap" width="150" height="200">
 
                                 </div>
@@ -57,9 +43,8 @@
                                 <div class="card-body">
                                     <div class="col-md-12">
                                         <div class="col-md-8">
-
-                                            <a href="{{ url('editContent',array($dat->id)) }}"  class="btn" style="color: black"><h4 class="card-title">{{$dat->title}}
-                                                </h4></a>
+                        <h4 class="card-title">{{$dat->title}}
+                                                </h4>
 
                                         </div>
                                         <div class="col-md-4">
@@ -74,7 +59,9 @@
                             </div>
                         </div>
                     @endif
+                    @endforeach
                 @endforeach
+            
 
         </div>
     </div>
