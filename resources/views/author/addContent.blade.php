@@ -18,42 +18,71 @@
                 </div>
             @endif
 
-     <div class="col-md-4">
-        <form action="{{ url('content/storeContent') }}" id="upload" method="post"
-              enctype="multipart/form-data">
-            {{ csrf_field() }}
-            <div class="form-group ">
-                <label for="usr">Upload Image</label>
-                <input type="file" name="image" class="form-control " required>
-            </div>
+            <div class="col-md-12">
+                <form action="{{ url('content/storeContent') }}" id="upload" method="post"
+                      enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                        <div class="col-md-12" style="text-align: center; margin-top: -3%">
+                            <h2>Adding New Post</h2>
+                        </div>
+                    <div class="col-md-12">
+                        <div class="col-md-1" style="margin-right: -40px">
+                            <label for="usr"><h4>Title:</h4></label>
+                        </div>
 
-            <div class="form-group">
-                <label for="usr">Title:</label>
-                <input type="text" name="title" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="comment">Abstract:</label>
-                <textarea class="form-control" name="abstract" rows="5"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="comment">Content:</label>
-                <textarea class="form-control" name="content_body" rows="5"></textarea>
-            </div>
-            <select id="category" class=" form-control " name="category">
-                @foreach($data as $category)
-                    <option value="" selected disabled hidden>Category</option>
-                    <option value="{{$category->id}}">{{$category->name}}</option>
-                @endforeach
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <input type="text" name="title" class="form-control" required>
+                            </div>
+                        </div>
 
-            </select>
-            <div class="form-group">
+                        <div class="col-md-1">
+                            <label for="usr"><h4>Category:</h4></label>
+                        </div>
+                        <div class="col-md-5">
+                            <select id="category" class=" form-control " name="category">
+                                @foreach($data as $category)
+                                    <option value="" selected disabled hidden>Category</option>
+                                    <option value="{{$category->id}}">{{$category->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
 
-                <button class="btn btn-success upload-image" type="submit">Create</button>
-                <br>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="comment"><h4>Abstract:</h4></label>
+                            <textarea class="form-control" name="abstract" rows="5"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="comment"><h4>Content:</h4></label>
+                            <textarea class="form-control" name="content_body" rows="5"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2" style="margin-right: -2%">
+                        <label for="usr"><h4>Upload Image</h4></label>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="form-group ">
+                            <input type="file" name="image" class="form-control " required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="PostButton" style="text-align: center">
+                            <button class="btn btn-success upload-image"
+                                    style="text-align: center!important;   margin-bottom: 1%" type="submit">
+                                Submit Post
+                            </button>
+                        </div>
+                        <br>
+                    </div>
+                </form>
             </div>
-
-        </form>
-    </div>
         </div>
     </div>
     </div>

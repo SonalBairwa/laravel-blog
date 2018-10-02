@@ -74,7 +74,7 @@ class AuthorController extends Controller
             //return $myfile;
           //$content_path=$content->move(public_path('fileUploads/'.$user_id.'/content'),'con.txt');
           $data=Content::firstOrCreate(['image'=>$image_path,'title'=>$title,'abstract'=>$abstract,'text'=>$content_body,'category_id'=>$category]);
-           return redirect()->back()->with('status', 'Profile updated!');
+           return redirect('/content/content')->with('status', 'Profile updated!');
           //$path="http://localhost/".substr($path,14);
           //return $path; 
         
