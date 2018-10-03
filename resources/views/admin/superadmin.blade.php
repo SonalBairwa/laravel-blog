@@ -21,7 +21,7 @@
             
            
            
-             <form action="{{ route('asignRole') }}" id="asignRole" method="post" enctype="multipart/form-data">
+             <form action="{{ url('/admin/assignRoleToUser') }}" id="asignRole" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
        
                <div class="row" >
@@ -30,10 +30,10 @@
                        
 
                         <div class="">
-                            <select id="user_id" class=" form-control col-xs-3 col-sm-3 col-md-3" name="user_id">
+                            <select id="user_id" class=" form-control " name="user_id">
                              @foreach($users as $user)
-                           <option value="" selected disabled hidden></option>
-                           <option  value="{{$user->id}}">{{$user->name}}</option>
+                           <option value="" selected disabled hidden>Select User</option>
+                           <option  value="{{$user->id}}" >{{$user->name}}</option>
                            @endforeach
                        </select>
                         </div>
@@ -46,7 +46,7 @@
                         <div class="">
                             <select id="role_id" class="form-control" name="role_id">
                                  @foreach($roles as $role)
-                             <option value="" selected disabled hidden></option>   
+                             <option value="" selected disabled hidden>Slect Role</option>   
                             <option value="{{$role->id}}">{{$role->name}}</option>
                                   @endforeach
                             </select>
@@ -72,7 +72,31 @@
                
                 </form>
             </div>
+            <div class="row ">
+                <div id='add_camp' class="col-md-10" style="margin-left: 20px">
+                 
+            <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+          <tr>
+            <th>User Name</th>
+            <th>User Role</th>
             
+          </tr>
+         </thead>
+  <tbody>
+ 
+           @foreach($userWithRoles as $key)
+            
+          <tr>
+              <td>{{$key->name}}</td>
+             <td>{{$key->role}}  </td>
+               
+          </tr>
+           @endforeach 
+</tbody>
+      </table>
+                </div>
+            </div>
         </div>
 
     </div>

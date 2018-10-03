@@ -48,7 +48,7 @@ class AuthorController extends Controller
         $data=Category::all();
         $cat=Category::find($content->category_id);
 
-    	return view('author.editContent',compact('title','abstract','text','cat','data'));
+    	return view('author.editContent',compact('title','abstract','text','cat','data','content'));
     }
     public function storeContent(Request $request)
     {
@@ -88,4 +88,21 @@ class AuthorController extends Controller
           //return $path; 
         
     }
+    public function storeEditContent(Request $request)
+    {
+       // return $request->all();
+        $title=$request->title;
+        $content_id=$request->content_id;
+        $abstract=$request->abstract;
+        $content_body=$request->content_body;
+        $category=$request->category;
+        $carbon = Carbon::now();
+        $user_id = Auth::user()->id;
+        
+       
+            
+        $data=Content::where('id',$content_id)->update(['user_id'=>$user_id,'title'=>$title,'abstract'=>$abstract,'text'=>$content_body,'category_id'=>$category]);
+           return redirect('/content/content')->with('status', 'Profile updated!');
+    }
+          
 }

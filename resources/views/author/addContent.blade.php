@@ -29,8 +29,9 @@
                 <form action="{{ url('content/storeContent') }}" id="upload" method="post"
                       enctype="multipart/form-data">
                     {{ csrf_field() }}
-                        <div class="col-md-12" style="text-align: center; margin-top: -3%;">
-                            <h2 >Adding New Post</h2>
+                        
+                        <div class="col-md-12" style="text-align: center; margin-top: -3%;font-family:verdana">
+                            <h1 >Adding New Post</h1>
                         </div>
                     <div class="col-md-12">
                         <div class="col-md-1" style="margin-right: -40px">

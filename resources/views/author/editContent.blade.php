@@ -21,12 +21,12 @@
 
             <div class="col-md-12">
                    
-                <form action="{{ url('content/storeContent') }}" id="upload" method="post"
+                <form action="{{ url('/content/storeEditContent') }}" id="upload" method="post"
                       enctype="multipart/form-data">
                     {{ csrf_field() }}
-                        <div class="col-md-12" style="text-align: center; margin-top: -3%;">
-                            <h2 >Updating Post</h2>
-                        </div>
+                        <div class="col-md-12" style="text-align: center; margin-top: -3%;font-family:verdana">
+                            <h1 >Updating Post</h1>
+        </div>
                     <div class="col-md-12">
                         <div class="col-md-1" style="margin-right: -40px">
                             <label for="usr"><h4>Title:</h4></label>
@@ -74,6 +74,11 @@
                             <input type="file" name="image" class="form-control " required>
                         </div>
                     </div> -->
+                     <div class="col-md-3">
+                            <div class="form-group">
+                                <input type="hidden" name="content_id" value="{{$content->id}}" class="form-control" >
+                            </div>
+                        </div>
 
                     <div class="form-group">
                         <div class="PostButton" style="text-align: center">

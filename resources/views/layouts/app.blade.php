@@ -65,8 +65,8 @@
                     @else
                         @if(Auth::user()->role[0]->name=='admin' OR Auth::user()->role[0]->name=='author')
                           @if(Auth::user()->role[0]->name=='admin')
-                             <a href="" class="btn " style="color: black">Admin</a>
-                             <a href="" class="btn " style="color: black">Admin</a>
+                             <a href="/admin/userRole" class="btn " style="color: black">User Roles</a>
+                             
                             @endif
                             <a href="{{ url('content/content') }}" class="btn " style="color: black">Content</a>
                             <!-- <div class="dropdown btn " style="margin-top: 10px; ">

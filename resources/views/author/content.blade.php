@@ -17,7 +17,9 @@
                     </ul>
                 </div>
             @endif
-
+         <div class="col-md-12" style="text-align: center; margin-top: -3%;font-family:verdana">
+                            <h1 >Your Posts</h1>
+        </div>
             <div class="Postbutton" style="margin-bottom: 5%; text-align: center">
             <!--  <button  type="button" href="{{ url('content/add-content') }}" class="btn btn-default">Add more posts</button> -->
             <!--  <a href="{{ url('content/add-content') }}" class="btn" style="color: black"><h3>Add New Content</h3></a> -->
