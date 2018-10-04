@@ -66,6 +66,8 @@
                                         </div>
                                         <div class="col-md-4">
                                             <h5>created at: {{$dat->created_at->format('d/m/Y')}}</h5>
+                                            <a href="{{ url('editContent',array($dat->id)) }}"  class="btn" style="color: black"><h4 class="button1">Edit Content
+                                                </h4></a>
                                         </div>
                                     </div>
                                     <p class="card-text">{{$dat->abstract}}</p>
@@ -118,6 +120,16 @@
         padding: 4px;
         border-color: #000000
     }
-
+.button1 {
+  font: bold 20px Arial;
+  text-decoration: none;
+  background-color: #c3a694;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+}
 </style>
 <script src="{{ asset('js/jquery.js') }}"></script>
